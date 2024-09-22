@@ -98,16 +98,6 @@ class Course(models.Model):
         return self.status == PublishStatus.PUBLISHED
 
     @property
-    def image_admin(self):
-        if not self.image:
-            return ""
-        image_options = {
-            "width": 500
-        }
-        url = self.image.build_url(**image_options)
-        return url
-
-    @property
     def path(self):
         model_name = self.__class__.__name__
         model_name_slug =  slugify(model_name) + 's'
@@ -116,24 +106,6 @@ class Course(models.Model):
     def get_absolute_url(self):
         return self.path
 
-    def get_display_name(self):
-        model_name = self.__class__.__name__
-        if not self.title:
-            return f"{self.public_id} - {model_name}"
-        return f"{self.title} - {model_name}"
-
-    def get_image_thumbnail(self, width=500, as_html=False):
-        if not self.image:
-            return ""
-        image_options = {
-            "width": width
-        }
-        if as_html:
-            # CloudinaryImage(str(self.image)).image(**image_options)
-            return self.image.image(**image_options)
-        # CloudinaryImage(str(self.image)).build_url(**image_options)
-        url = self.image.build_url(**image_options)
-        return url
 
 
 class Lesson(models.Model):
