@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+local-cdn
+django.txt
+django-commands.txt
+
+
 # C extensions
 *.so
 

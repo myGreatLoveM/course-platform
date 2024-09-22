@@ -29,7 +29,7 @@ class Course(models.Model):
     access = models.CharField(
         max_length=20,
         choices=AccessRequirement.choices,
-        default=AccessRequirement.ANYONE
+        default=AccessRequirement.EMAIL_REQUIRED
     )
     status = models.CharField(
         max_length=20,
