@@ -1,0 +1,8 @@
+permission and access
+django-admin
+django-orm
+
+
+django-admin startproject
+
+py manage.py runserver
