@@ -7,7 +7,7 @@ from .models import Course, Lesson
 
 class LessonInline(admin.StackedInline):
     model = Lesson
-    readonly_fields = ["updated"]
+    readonly_fields = ["public_id", "updated"]
     extra = 0
 
 @admin.register(Course)
@@ -24,6 +24,7 @@ class CourseAdmin(admin.ModelAdmin):
         return format_html(f"<img src={url} />")
     
     display_image.short_description = "Current image"
+
 
 
 # admin.site.register(Course, CourseAdmin)  
