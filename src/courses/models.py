@@ -1,6 +1,8 @@
+import helpers
 from django.db import models
 
-# Create your models here.
+
+helpers.cloudinary_init()
 
 
 class AccessRequirement(models.TextChoices):
